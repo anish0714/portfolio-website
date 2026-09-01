@@ -4,6 +4,18 @@
     <meta charset="UTF-8" />
     <script>
       (function () {
+        // Restore the real path after the 404.html redirect (see public/404.html)
+        // so React Router mounts on the intended route, not on "/".
+        var params = new URLSearchParams(location.search);
+        var redirect = params.get("redirect");
+        if (redirect) {
+          var basePath = "/portfolio-website/";
+          history.replaceState(null, "", basePath + redirect);
+        }
+      })();
+    </script>
+    <script>
+      (function () {
         var stored = localStorage.getItem("theme");
         var theme =
           stored ||

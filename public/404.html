@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Redirecting…</title>
+    <script>
+      // GitHub Pages serves this file for any path it doesn't recognize as a
+      // static file within this project site. Encode the intended path into
+      // a query string and send the browser back to index.html, which
+      // restores it via history.replaceState before React Router mounts -
+      // so direct links and refreshes on client-side routes still work.
+      var basePath = "/portfolio-website/";
+      var path = location.pathname.slice(basePath.length);
+      var target =
+        basePath +
+        "?redirect=" +
+        encodeURIComponent(path + location.search + location.hash);
+      location.replace(target);
+    </script>
+  </head>
+  <body></body>
+</html>
