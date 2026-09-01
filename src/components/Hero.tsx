@@ -1,4 +1,4 @@
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Download } from "lucide-react";
 import { social } from "../data/social";
 import { GitHubIcon } from "./icons";
 import profile from "../assets/profile.jpg";
@@ -54,6 +54,15 @@ export default function Hero() {
             >
               <GitHubIcon size={16} />
               GitHub Profile
+            </a>
+            <a
+              href={`${import.meta.env.BASE_URL}resume.pdf`}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 rounded-md border border-line px-4 py-2 text-sm font-semibold text-fg transition-colors hover:border-fg-subtle hover:bg-canvas-subtle"
+            >
+              <Download size={16} />
+              Resume
             </a>
           </div>
         </div>
