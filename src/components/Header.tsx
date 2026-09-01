@@ -1,15 +1,16 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { Mail, Menu, X } from "lucide-react";
 import { social, gmailComposeUrl } from "../data/social";
 import { GitHubIcon, LinkedInIcon } from "./icons";
 import ThemeToggle from "./ThemeToggle";
 
 const navLinks = [
-  { label: "About", href: "#top" },
-  { label: "Stack", href: "#stack" },
-  { label: "Projects", href: "#projects" },
-  { label: "Experience", href: "#experience" },
-  { label: "Contact", href: "#contact" },
+  { label: "About", href: `${import.meta.env.BASE_URL}#top` },
+  { label: "Stack", href: `${import.meta.env.BASE_URL}#stack` },
+  { label: "Projects", href: `${import.meta.env.BASE_URL}#projects` },
+  { label: "Experience", href: `${import.meta.env.BASE_URL}#experience` },
+  { label: "Contact", href: `${import.meta.env.BASE_URL}#contact` },
 ];
 
 export default function Header() {
@@ -32,12 +33,12 @@ export default function Header() {
       }`}
     >
       <div className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
-        <a
-          href="#top"
+        <Link
+          to="/"
           className="font-mono text-sm font-semibold text-fg transition-colors hover:text-accent"
         >
           <span className="text-accent">~/</span>anish-dandekar
-        </a>
+        </Link>
 
         <nav className="hidden items-center gap-8 md:flex">
           {navLinks.map((link) => (

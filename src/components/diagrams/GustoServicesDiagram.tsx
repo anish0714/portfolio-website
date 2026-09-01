@@ -1,4 +1,4 @@
-export default function ProjectArchitectureDiagram() {
+export default function GustoServicesDiagram() {
   return (
     <svg
       viewBox="0 0 700 220"
