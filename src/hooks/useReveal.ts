@@ -15,7 +15,6 @@ export function useReveal<T extends HTMLElement>(threshold = 0.15) {
       ([entry]) => {
         if (entry.isIntersecting) {
           setVisible(true);
-          observer.disconnect();
         }
       },
       { threshold, rootMargin: "0px 0px -80px 0px" },
