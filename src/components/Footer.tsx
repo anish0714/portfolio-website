@@ -1,10 +1,18 @@
 import { Mail } from "lucide-react";
 import { social, gmailComposeUrl } from "../data/social";
 import { GitHubIcon, LinkedInIcon } from "./icons";
+import { useReveal } from "../hooks/useReveal";
 
 export default function Footer() {
+  const { ref, visible } = useReveal<HTMLElement>();
+
   return (
-    <footer className="border-t border-line">
+    <footer
+      ref={ref}
+      className={`border-t border-line transition-opacity duration-700 ease-out ${
+        visible ? "opacity-100" : "opacity-0"
+      }`}
+    >
       <div className="mx-auto flex max-w-5xl flex-col items-center gap-4 px-6 py-10 text-center">
         <div className="flex items-center gap-5">
           <a

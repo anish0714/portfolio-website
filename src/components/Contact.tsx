@@ -1,11 +1,13 @@
 import { useState, type FormEvent } from "react";
 import { Send } from "lucide-react";
 import { gmailComposeUrl } from "../data/social";
+import { useReveal } from "../hooks/useReveal";
 
 export default function Contact() {
   const [name, setName] = useState("");
   const [contact, setContact] = useState("");
   const [message, setMessage] = useState("");
+  const { ref, visible } = useReveal<HTMLElement>();
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
@@ -15,7 +17,13 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="mx-auto max-w-5xl px-6 py-14">
+    <section
+      ref={ref}
+      id="contact"
+      className={`mx-auto max-w-5xl px-6 py-14 transition-all duration-700 ease-out ${
+        visible ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"
+      }`}
+    >
       <div className="mb-8 flex items-center gap-3">
         <h2 className="text-sm font-semibold uppercase tracking-wider text-fg-subtle">
           Contact

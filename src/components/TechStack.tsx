@@ -1,8 +1,17 @@
 import { techStack } from "../data/techStack";
+import { useReveal } from "../hooks/useReveal";
 
 export default function TechStack() {
+  const { ref, visible } = useReveal<HTMLElement>();
+
   return (
-    <section id="stack" className="mx-auto max-w-5xl px-6 py-14">
+    <section
+      ref={ref}
+      id="stack"
+      className={`mx-auto max-w-5xl px-6 py-14 transition-all duration-700 ease-out ${
+        visible ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"
+      }`}
+    >
       <div className="mb-6 flex items-center gap-3">
         <h2 className="text-sm font-semibold uppercase tracking-wider text-fg-subtle">
           Tech Stack

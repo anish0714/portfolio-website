@@ -1,10 +1,19 @@
 import { Building2 } from "lucide-react";
 import { experience } from "../data/experience";
 import ExperienceCard from "./ExperienceCard";
+import { useReveal } from "../hooks/useReveal";
 
 export default function Experience() {
+  const { ref, visible } = useReveal<HTMLElement>();
+
   return (
-    <section id="experience" className="mx-auto max-w-5xl px-6 py-14">
+    <section
+      ref={ref}
+      id="experience"
+      className={`mx-auto max-w-5xl px-6 py-14 transition-all duration-700 ease-out ${
+        visible ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"
+      }`}
+    >
       <div className="mb-8 flex items-center gap-3">
         <h2 className="text-sm font-semibold uppercase tracking-wider text-fg-subtle">
           Experience

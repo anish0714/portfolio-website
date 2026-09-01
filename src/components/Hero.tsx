@@ -2,10 +2,19 @@ import { ArrowRight } from "lucide-react";
 import { social } from "../data/social";
 import { GitHubIcon } from "./icons";
 import profile from "../assets/profile.jpg";
+import { useReveal } from "../hooks/useReveal";
 
 export default function Hero() {
+  const { ref, visible } = useReveal<HTMLElement>();
+
   return (
-    <section id="top" className="mx-auto max-w-5xl px-6 pb-20 pt-16 md:pt-24">
+    <section
+      ref={ref}
+      id="top"
+      className={`mx-auto max-w-5xl px-6 pb-20 pt-16 transition-all duration-700 ease-out md:pt-24 ${
+        visible ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"
+      }`}
+    >
       <div className="grid items-center gap-12 md:grid-cols-[1.1fr_0.9fr]">
         <div>
           <img
