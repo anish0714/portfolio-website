@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Mail, Menu, X } from "lucide-react";
 import { social, gmailComposeUrl } from "../data/social";
 import { GitHubIcon, LinkedInIcon } from "./icons";
+import ThemeToggle from "./ThemeToggle";
 
 const navLinks = [
   { label: "About", href: "#top" },
@@ -77,6 +78,7 @@ export default function Header() {
           >
             <LinkedInIcon size={18} />
           </a>
+          <ThemeToggle />
         </div>
 
         <button
@@ -111,6 +113,7 @@ export default function Header() {
               <a href={social.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn" className="text-fg-muted hover:text-fg">
                 <LinkedInIcon size={18} />
               </a>
+              <ThemeToggle />
             </div>
           </div>
         </nav>
