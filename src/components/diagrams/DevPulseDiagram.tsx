@@ -5,7 +5,7 @@ export default function DevPulseDiagram() {
       xmlns="http://www.w3.org/2000/svg"
       className="h-full w-full"
       role="img"
-      aria-label="Architecture diagram: a shell app loads the analytics-remote and notes-remote micro-frontends at runtime via Webpack Module Federation"
+      aria-label="Architecture diagram: a shell app loads the pdf-conversion-remote and pdf-manipulation-remote micro-frontends at runtime via Webpack Module Federation"
     >
       <defs>
         <marker
@@ -65,7 +65,7 @@ export default function DevPulseDiagram() {
           fontSize="10.5"
           fill="#8b949e"
         >
-          nav · lazy-loads remotes
+          sidebar nav · lazy-loads tools
         </text>
         <text
           x="110"
@@ -94,11 +94,11 @@ export default function DevPulseDiagram() {
           y="36"
           textAnchor="middle"
           fontFamily="JetBrains Mono, monospace"
-          fontSize="13"
+          fontSize="11.5"
           fontWeight="700"
           fill="#e6edf3"
         >
-          analytics-remote
+          pdf-conversion-remote
         </text>
         <text
           x="430"
@@ -108,7 +108,7 @@ export default function DevPulseDiagram() {
           fontSize="10"
           fill="#6e7681"
         >
-          exposes ./Widget
+          images/Word &#8594; PDF, merge
         </text>
         <text
           x="430"
@@ -118,7 +118,7 @@ export default function DevPulseDiagram() {
           fontSize="10"
           fill="#6e7681"
         >
-          /remotes/analytics/
+          /remotes/pdf-conversion/
         </text>
       </g>
 
@@ -137,11 +137,11 @@ export default function DevPulseDiagram() {
           y="166"
           textAnchor="middle"
           fontFamily="JetBrains Mono, monospace"
-          fontSize="13"
+          fontSize="11.5"
           fontWeight="700"
           fill="#e6edf3"
         >
-          notes-remote
+          pdf-manipulation-remote
         </text>
         <text
           x="430"
@@ -151,7 +151,7 @@ export default function DevPulseDiagram() {
           fontSize="10"
           fill="#6e7681"
         >
-          exposes ./Widget
+          text, highlight, redact, delete
         </text>
         <text
           x="430"
@@ -161,7 +161,7 @@ export default function DevPulseDiagram() {
           fontSize="10"
           fill="#6e7681"
         >
-          /remotes/notes/
+          /remotes/pdf-manipulation/
         </text>
       </g>
 

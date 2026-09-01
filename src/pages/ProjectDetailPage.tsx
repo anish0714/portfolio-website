@@ -50,7 +50,41 @@ export default function ProjectDetailPage() {
       <h1 className="mt-6 text-3xl font-extrabold text-fg">{project.name}</h1>
       <p className="mt-2 font-mono text-sm text-accent">{project.tagline}</p>
 
-      <div className="mt-8 overflow-hidden rounded-lg border border-[#30363d] bg-[#0d1117] p-4">
+      <div className="mt-6 flex flex-wrap items-center gap-4">
+        <a
+          href={project.githubUrl}
+          target="_blank"
+          rel="noreferrer"
+          className="inline-flex items-center gap-2 rounded-md border border-line px-4 py-2 text-sm font-semibold text-fg transition-colors hover:border-fg-subtle hover:bg-canvas-subtle"
+        >
+          <GitHubIcon size={16} />
+          App repo
+        </a>
+        {project.secondaryGithubUrl && (
+          <a
+            href={project.secondaryGithubUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-2 rounded-md border border-line px-4 py-2 text-sm font-semibold text-fg transition-colors hover:border-fg-subtle hover:bg-canvas-subtle"
+          >
+            <GitHubIcon size={16} />
+            {project.secondaryLabel ?? "Second repo"}
+          </a>
+        )}
+        {project.liveUrl && (
+          <a
+            href={project.liveUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-2 rounded-md bg-accent-emphasis px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-[#388bfd]"
+          >
+            Live demo
+            <ExternalLink size={16} />
+          </a>
+        )}
+      </div>
+
+      <div className="mt-10 overflow-hidden rounded-lg border border-[#30363d] bg-[#0d1117] p-4">
         <Diagram />
       </div>
 
@@ -86,40 +120,6 @@ export default function ProjectDetailPage() {
             </span>
           ))}
         </div>
-      </div>
-
-      <div className="mt-10 flex flex-wrap items-center gap-4">
-        <a
-          href={project.githubUrl}
-          target="_blank"
-          rel="noreferrer"
-          className="inline-flex items-center gap-2 rounded-md border border-line px-4 py-2 text-sm font-semibold text-fg transition-colors hover:border-fg-subtle hover:bg-canvas-subtle"
-        >
-          <GitHubIcon size={16} />
-          App repo
-        </a>
-        {project.secondaryGithubUrl && (
-          <a
-            href={project.secondaryGithubUrl}
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex items-center gap-2 rounded-md border border-line px-4 py-2 text-sm font-semibold text-fg transition-colors hover:border-fg-subtle hover:bg-canvas-subtle"
-          >
-            <GitHubIcon size={16} />
-            {project.secondaryLabel ?? "Second repo"}
-          </a>
-        )}
-        {project.liveUrl && (
-          <a
-            href={project.liveUrl}
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex items-center gap-2 rounded-md bg-accent-emphasis px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-[#388bfd]"
-          >
-            Live demo
-            <ExternalLink size={16} />
-          </a>
-        )}
       </div>
     </section>
   );
