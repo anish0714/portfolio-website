@@ -45,6 +45,15 @@ export default function Footer() {
         </div>
         <p className="font-mono text-xs text-fg-subtle">
           Built with React &amp; Tailwind CSS · &copy; {new Date().getFullYear()} Anish Dandekar
+          {" · "}
+          <a
+            href="https://github.com/anish0714/portfolio-website"
+            target="_blank"
+            rel="noreferrer"
+            className="underline decoration-dotted underline-offset-2 transition-colors hover:text-accent"
+          >
+            View source
+          </a>
         </p>
       </div>
     </footer>
