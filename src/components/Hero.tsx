@@ -49,12 +49,12 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="overflow-hidden rounded-lg border border-line bg-canvas-subtle shadow-2xl shadow-black/40">
-          <div className="flex items-center gap-1.5 border-b border-line px-4 py-3">
+        <div className="overflow-hidden rounded-lg border border-[#30363d] bg-[#161b22] shadow-2xl shadow-black/40">
+          <div className="flex items-center gap-1.5 border-b border-[#30363d] px-4 py-3">
             <span className="h-3 w-3 rounded-full bg-[#ff5f56]" />
             <span className="h-3 w-3 rounded-full bg-[#ffbd2e]" />
             <span className="h-3 w-3 rounded-full bg-[#27c93f]" />
-            <span className="ml-3 font-mono text-xs text-fg-subtle">
+            <span className="ml-3 font-mono text-xs text-[#6e7681]">
               about.ts
             </span>
           </div>

@@ -21,6 +21,21 @@
   --color-success: #3fb950;
 }
 
+:root[data-theme="light"] {
+  --color-canvas: #ffffff;
+  --color-canvas-subtle: #f6f8fa;
+  --color-canvas-inset: #eff2f5;
+  --color-line: #d0d7de;
+  --color-line-muted: #d8dee4;
+  --color-fg: #1f2328;
+  --color-fg-muted: #59636e;
+  --color-fg-subtle: #6e7781;
+  --color-accent: #0969da;
+  --color-accent-emphasis: #0969da;
+  --color-accent-muted: #0969da1a;
+  --color-success: #1a7f37;
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
@@ -30,6 +45,9 @@
     background-color: var(--color-canvas);
     color: var(--color-fg);
     font-feature-settings: "cv11", "ss01";
+    transition:
+      background-color 0.2s ease,
+      color 0.2s ease;
   }
 
   ::selection {
