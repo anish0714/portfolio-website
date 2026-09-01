@@ -1,32 +1,31 @@
-# React + TypeScript + Vite
+# Anish Dandekar — Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+My personal portfolio site: experience, tech stack, projects, and a way to get in touch.
 
-Currently, two official plugins are available:
+**Live:** https://anish0714.github.io/portfolio-website/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
 
-## React Compiler
+- **Projects as case studies** — each project renders as a tile on the home page; clicking one opens a dedicated `/projects/:slug` page with the problem, my role, tech, an architecture diagram, and links to the repo and live demo
+- **Light/dark theme toggle** — persisted to `localStorage`, defaults to the system preference, applied before first paint to avoid a flash of the wrong theme
+- **Scroll-reveal animations** — sections fade/slide in on entry via a small `IntersectionObserver` hook, skipped entirely under `prefers-reduced-motion`
+- **Downloadable resume** — a one-page PDF, linked from the hero
+- **Open Graph/Twitter preview card** — sharing the link shows a proper image, not a bare URL
+- **Contact form** — opens a pre-filled Gmail compose window with no backend required
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Tech stack
 
-## Expanding the Oxlint configuration
+React 19, TypeScript, Vite, Tailwind CSS, React Router (client-side routing for project pages), Vitest + React Testing Library, deployed via GitHub Actions to GitHub Pages.
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+## Running locally
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+```bash
+npm install
+npm run dev
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+Other scripts: `npm run build`, `npm run lint`, `npm run test`.
+
+## Deployment
+
+Pushing to `main` runs lint, tests, and a build, then deploys to GitHub Pages. `public/404.html` handles the GitHub Pages SPA-routing fallback, so a direct link or refresh on a project page (e.g. `/projects/devpulse-mfe`) works correctly instead of 404ing.
