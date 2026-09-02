@@ -104,56 +104,40 @@ export default function BentoDashboard() {
           </div>
         </BentoCard>
 
-        {/* Now building (terminal snippet) */}
+        {/* Highlights */}
         <BentoCard
           index={1}
           visible={visible}
-          className="overflow-hidden border-[#30363d]! bg-[#161b22]! p-0! sm:col-span-2 lg:col-span-2 lg:row-span-2"
+          className="flex flex-col justify-center sm:col-span-2 lg:col-span-2 lg:row-span-2"
         >
-          <div className="flex items-center gap-1.5 border-b border-[#30363d] px-4 py-3">
-            <span className="h-3 w-3 rounded-full bg-[#ff5f56]" />
-            <span className="h-3 w-3 rounded-full bg-[#ffbd2e]" />
-            <span className="h-3 w-3 rounded-full bg-[#27c93f]" />
-            <span className="ml-3 font-mono text-xs text-[#6e7681]">
-              about.ts
-            </span>
+          <h3 className="mb-5 text-sm font-semibold uppercase tracking-wider text-fg-subtle">
+            Highlights
+          </h3>
+          <div className="flex flex-col gap-5">
+            {[
+              {
+                stat: "~30%",
+                label: "faster search, from optimized React rendering + API integration",
+              },
+              {
+                stat: "~25%",
+                label: "faster document delivery via an efficient Delivery API",
+              },
+              {
+                stat: "~20%",
+                label: "smaller bundles after Webpack optimization",
+              },
+            ].map((h) => (
+              <div key={h.stat} className="flex items-baseline gap-4">
+                <span className="w-20 shrink-0 font-mono text-2xl font-bold text-accent">
+                  {h.stat}
+                </span>
+                <span className="text-sm leading-snug text-fg-muted">
+                  {h.label}
+                </span>
+              </div>
+            ))}
           </div>
-          <pre className="overflow-x-auto p-5 font-mono text-[13px] leading-relaxed">
-            <code>
-              <span className="text-[#ff7b72]">const</span>{" "}
-              <span className="text-[#d2a8ff]">anish</span> = {"{"}
-              {"\n"}
-              {"  "}
-              <span className="text-[#79c0ff]">role</span>:{" "}
-              <span className="text-[#a5d6ff]">
-                "Sr. Full Stack Engineer"
-              </span>
-              ,{"\n"}
-              {"  "}
-              <span className="text-[#79c0ff]">focus</span>: [{"\n"}
-              {"    "}
-              <span className="text-[#a5d6ff]">"AI-Driven Development"</span>
-              ,{"\n"}
-              {"    "}
-              <span className="text-[#a5d6ff]">"Scalable Full-Stack Systems"</span>
-              ,{"\n"}
-              {"    "}
-              <span className="text-[#a5d6ff]">"Micro Frontends"</span>
-              {"\n"}
-              {"  "}],{"\n"}
-              {"  "}
-              <span className="text-[#79c0ff]">currentlyBuilding</span>:{" "}
-              <span className="text-[#a5d6ff]">
-                "LLM-powered legal-tech UI"
-              </span>
-              ,{"\n"}
-              {"  "}
-              <span className="text-[#79c0ff]">basedIn</span>:{" "}
-              <span className="text-[#a5d6ff]">"Greater Toronto Area"</span>
-              ,{"\n"}
-              {"}"};
-            </code>
-          </pre>
         </BentoCard>
 
         {/* Tech stack */}
@@ -167,20 +151,17 @@ export default function BentoDashboard() {
             <Sparkles size={14} className="text-accent" />
             Tech Stack
           </h3>
-          <div className="flex flex-col gap-3">
+          <div className="grid grid-cols-1 gap-x-8 gap-y-3 sm:grid-cols-2">
             {techStack.map((group) => (
-              <div
-                key={group.label}
-                className="flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-6"
-              >
-                <span className="w-36 shrink-0 font-mono text-xs text-fg-subtle">
+              <div key={group.label} className="flex items-center gap-4">
+                <span className="w-28 shrink-0 font-mono text-xs text-fg-subtle">
                   {group.label}
                 </span>
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-1.5">
                   {group.items.map((tech) => (
                     <span
                       key={tech}
-                      className="rounded-full border border-line bg-canvas px-3 py-1 font-mono text-xs text-fg-muted transition-colors hover:border-accent hover:text-accent"
+                      className="rounded-full border border-line bg-canvas px-2.5 py-0.5 font-mono text-[11px] text-fg-muted transition-colors hover:border-accent hover:text-accent"
                     >
                       {tech}
                     </span>
