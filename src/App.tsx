@@ -1,6 +1,5 @@
 import { Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
-import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import ProjectDetailPage from "./pages/ProjectDetailPage";
 
@@ -14,7 +13,6 @@ export default function App() {
           <Route path="/projects/:slug" element={<ProjectDetailPage />} />
         </Routes>
       </main>
-      <Footer />
     </div>
   );
 }
