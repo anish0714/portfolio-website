@@ -1,5 +1,5 @@
 import type { ComponentType } from "react";
-import GustoServicesDiagram from "../components/diagrams/GustoServicesDiagram";
+import WaypointDiagram from "../components/diagrams/WaypointDiagram";
 import DevPulseDiagram from "../components/diagrams/DevPulseDiagram";
 
 export interface Project {
@@ -18,26 +18,25 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    slug: "gustoservices",
-    name: "GustoServices",
-    tagline: "Two-sided service marketplace mobile app",
+    slug: "waypoint",
+    name: "Waypoint",
+    tagline: "Full-stack travel booking platform (flights + hotels)",
     problem:
-      "Local service vendors (home services, personal care, etc.) had no easy way to list availability and get discovered, while customers had no single app to search, compare, book, and pay for those services. GustoServices connects the two sides in one React Native app.",
-    role: "Solo full-stack: designed and built both the mobile app and its backend API from scratch.",
+      "Wanted a portfolio project that goes beyond CRUD: a real booking flow with actual inventory holds (not just a form that writes a row), seeded with real data rather than Lorem Ipsum placeholders - 15 real Canadian airports, 4 real airlines with a modeled 61-route domestic network, and 41 real hotels across 10 cities and 3 rating tiers, so search and booking behave like a real travel site.",
+    role: "Solo full-stack: designed the Prisma schema (16 tables), the Express API, the seat/room-inventory booking logic, JWT auth with guest checkout, and the Next.js frontend.",
     tech: [
-      "React Native",
-      "React Navigation",
+      "Next.js",
+      "React",
+      "TypeScript",
       "Node.js",
       "Express",
-      "MongoDB",
-      "Mongoose",
+      "PostgreSQL",
+      "Prisma",
       "JWT",
-      "Stripe",
+      "Tailwind CSS",
     ],
-    githubUrl: "https://github.com/anish0714/GustoServices",
-    secondaryGithubUrl: "https://github.com/anish0714/GustoServices-Backend",
-    secondaryLabel: "Backend repo",
-    Diagram: GustoServicesDiagram,
+    githubUrl: "https://github.com/anish0714/travel-app",
+    Diagram: WaypointDiagram,
   },
   {
     slug: "devpulse-mfe",
