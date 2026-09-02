@@ -1,15 +1,15 @@
-export default function GustoServicesDiagram() {
+export default function WaypointDiagram() {
   return (
     <svg
       viewBox="0 0 700 220"
       xmlns="http://www.w3.org/2000/svg"
       className="h-full w-full"
       role="img"
-      aria-label="Architecture diagram: React Native app connects to an Express API, which connects to MongoDB and Stripe"
+      aria-label="Architecture diagram: Next.js frontend connects to an Express API, which connects to PostgreSQL via Prisma"
     >
       <defs>
         <marker
-          id="arrow"
+          id="waypoint-arrow"
           viewBox="0 0 10 10"
           refX="8"
           refY="5"
@@ -28,7 +28,7 @@ export default function GustoServicesDiagram() {
         y2="90"
         stroke="#58a6ff"
         strokeWidth="1.5"
-        markerEnd="url(#arrow)"
+        markerEnd="url(#waypoint-arrow)"
       />
       <line
         x1="424"
@@ -37,7 +37,7 @@ export default function GustoServicesDiagram() {
         y2="90"
         stroke="#58a6ff"
         strokeWidth="1.5"
-        markerEnd="url(#arrow)"
+        markerEnd="url(#waypoint-arrow)"
       />
 
       <g>
@@ -59,7 +59,7 @@ export default function GustoServicesDiagram() {
           fontWeight="700"
           fill="#e6edf3"
         >
-          React Native
+          Next.js
         </text>
         <text
           x="102"
@@ -69,7 +69,7 @@ export default function GustoServicesDiagram() {
           fontSize="10.5"
           fill="#8b949e"
         >
-          Search
+          Search · Hotel detail
         </text>
         <text
           x="102"
@@ -79,7 +79,7 @@ export default function GustoServicesDiagram() {
           fontSize="10.5"
           fill="#8b949e"
         >
-          Book · Schedule
+          Booking flow
         </text>
         <text
           x="102"
@@ -89,7 +89,7 @@ export default function GustoServicesDiagram() {
           fontSize="10.5"
           fill="#8b949e"
         >
-          Pay · Review
+          Auth pages
         </text>
       </g>
 
@@ -122,7 +122,7 @@ export default function GustoServicesDiagram() {
           fontSize="10.5"
           fill="#8b949e"
         >
-          JWT Auth · OTP
+          JWT Auth
         </text>
         <text
           x="342"
@@ -132,7 +132,7 @@ export default function GustoServicesDiagram() {
           fontSize="10.5"
           fill="#8b949e"
         >
-          Stripe Payments
+          Seat/room holds
         </text>
         <text
           x="342"
@@ -142,7 +142,7 @@ export default function GustoServicesDiagram() {
           fontSize="10.5"
           fill="#8b949e"
         >
-          Multer Uploads
+          Guest checkout
         </text>
       </g>
 
@@ -165,7 +165,7 @@ export default function GustoServicesDiagram() {
           fontWeight="700"
           fill="#e6edf3"
         >
-          MongoDB
+          PostgreSQL
         </text>
         <text
           x="582"
@@ -175,7 +175,7 @@ export default function GustoServicesDiagram() {
           fontSize="10.5"
           fill="#8b949e"
         >
-          Users · Services
+          via Prisma
         </text>
         <text
           x="582"
@@ -185,7 +185,7 @@ export default function GustoServicesDiagram() {
           fontSize="10.5"
           fill="#8b949e"
         >
-          Schedules
+          16 tables
         </text>
         <text
           x="582"
@@ -195,7 +195,7 @@ export default function GustoServicesDiagram() {
           fontSize="10.5"
           fill="#8b949e"
         >
-          Payments · Feedback
+          Flights · Hotels · Bookings
         </text>
       </g>
 
@@ -207,7 +207,7 @@ export default function GustoServicesDiagram() {
         fontSize="10.5"
         fill="#6e7681"
       >
-        two-sided marketplace: vendors manage services, customers search / book / pay
+        seeded with real Canadian airports, airlines &amp; hotels
       </text>
     </svg>
   );
