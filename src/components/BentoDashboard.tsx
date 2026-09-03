@@ -104,56 +104,34 @@ export default function BentoDashboard() {
           </div>
         </BentoCard>
 
-        {/* Now building (terminal snippet) */}
+        {/* Now building */}
         <BentoCard
           index={1}
           visible={visible}
-          className="overflow-hidden border-[#30363d]! bg-[#161b22]! p-0! sm:col-span-2 lg:col-span-2 lg:row-span-2"
+          className="flex flex-col justify-center sm:col-span-2 lg:col-span-2 lg:row-span-2"
         >
-          <div className="flex items-center gap-1.5 border-b border-[#30363d] px-4 py-3">
-            <span className="h-3 w-3 rounded-full bg-[#ff5f56]" />
-            <span className="h-3 w-3 rounded-full bg-[#ffbd2e]" />
-            <span className="h-3 w-3 rounded-full bg-[#27c93f]" />
-            <span className="ml-3 font-mono text-xs text-[#6e7681]">
-              about.ts
-            </span>
+          <p className="font-mono text-xs uppercase tracking-wider text-accent">
+            Now building
+          </p>
+          <h3 className="mt-3 text-2xl font-extrabold leading-tight text-fg sm:text-3xl">
+            LLM-powered legal-tech UI
+          </h3>
+          <p className="mt-4 text-sm leading-relaxed text-fg-muted">
+            Integrating LLM-backed services into a legal-tech platform — from
+            playbook analysis with streaming AI results to a Compliance
+            Checker that flags nonconforming clauses automatically, cutting
+            manual review effort.
+          </p>
+          <div className="mt-5 flex flex-wrap gap-2">
+            {["Module Federation", "Streaming UI", "Claude"].map((tag) => (
+              <span
+                key={tag}
+                className="rounded-full border border-line bg-canvas px-3 py-1 font-mono text-xs text-fg-muted"
+              >
+                {tag}
+              </span>
+            ))}
           </div>
-          <pre className="overflow-x-auto p-5 font-mono text-[13px] leading-relaxed">
-            <code>
-              <span className="text-[#ff7b72]">const</span>{" "}
-              <span className="text-[#d2a8ff]">anish</span> = {"{"}
-              {"\n"}
-              {"  "}
-              <span className="text-[#79c0ff]">role</span>:{" "}
-              <span className="text-[#a5d6ff]">
-                "Sr. Full Stack Engineer"
-              </span>
-              ,{"\n"}
-              {"  "}
-              <span className="text-[#79c0ff]">focus</span>: [{"\n"}
-              {"    "}
-              <span className="text-[#a5d6ff]">"AI-Driven Development"</span>
-              ,{"\n"}
-              {"    "}
-              <span className="text-[#a5d6ff]">"Scalable Full-Stack Systems"</span>
-              ,{"\n"}
-              {"    "}
-              <span className="text-[#a5d6ff]">"Micro Frontends"</span>
-              {"\n"}
-              {"  "}],{"\n"}
-              {"  "}
-              <span className="text-[#79c0ff]">currentlyBuilding</span>:{" "}
-              <span className="text-[#a5d6ff]">
-                "LLM-powered legal-tech UI"
-              </span>
-              ,{"\n"}
-              {"  "}
-              <span className="text-[#79c0ff]">basedIn</span>:{" "}
-              <span className="text-[#a5d6ff]">"Greater Toronto Area"</span>
-              ,{"\n"}
-              {"}"};
-            </code>
-          </pre>
         </BentoCard>
 
         {/* Tech stack */}
@@ -167,20 +145,17 @@ export default function BentoDashboard() {
             <Sparkles size={14} className="text-accent" />
             Tech Stack
           </h3>
-          <div className="flex flex-col gap-3">
+          <div className="grid grid-cols-1 gap-x-8 gap-y-3 sm:grid-cols-2">
             {techStack.map((group) => (
-              <div
-                key={group.label}
-                className="flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-6"
-              >
-                <span className="w-36 shrink-0 font-mono text-xs text-fg-subtle">
+              <div key={group.label} className="flex items-center gap-4">
+                <span className="w-28 shrink-0 font-mono text-xs text-fg-subtle">
                   {group.label}
                 </span>
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-1.5">
                   {group.items.map((tech) => (
                     <span
                       key={tech}
-                      className="rounded-full border border-line bg-canvas px-3 py-1 font-mono text-xs text-fg-muted transition-colors hover:border-accent hover:text-accent"
+                      className="rounded-full border border-line bg-canvas px-2.5 py-0.5 font-mono text-[11px] text-fg-muted transition-colors hover:border-accent hover:text-accent"
                     >
                       {tech}
                     </span>
@@ -191,17 +166,31 @@ export default function BentoDashboard() {
           </div>
         </BentoCard>
 
-        {/* Project tiles */}
-        <div id="projects" className="contents">
+        {/* Projects */}
+        <div
+          id="projects"
+          style={{ transitionDelay: "210ms" }}
+          className={`col-span-1 mt-2 flex items-center gap-3 transition-opacity duration-700 ease-out sm:col-span-2 lg:col-span-4 ${
+            visible ? "opacity-100" : "opacity-0"
+          }`}
+        >
+          <h3 className="text-sm font-semibold uppercase tracking-wider text-fg-subtle">
+            Projects
+          </h3>
+          <div className="h-px flex-1 bg-line" />
+        </div>
+
+        <div className="contents">
           {projects.map((project, i) => {
-            const shownTech = project.tech.slice(0, 3);
+            const shownTech = project.tech.slice(0, 5);
             const hiddenCount = project.tech.length - shownTech.length;
             return (
               <BentoCard
                 key={project.slug}
-                index={3 + i}
+                index={4 + i}
                 visible={visible}
                 to={`/projects/${project.slug}`}
+                className="lg:col-span-2"
               >
                 <h3 className="text-base font-bold text-fg">
                   {project.name}
@@ -237,7 +226,11 @@ export default function BentoDashboard() {
         </div>
 
         {/* Connect */}
-        <BentoCard index={3 + projects.length} visible={visible}>
+        <BentoCard
+          index={4 + projects.length}
+          visible={visible}
+          className="lg:col-span-2"
+        >
           <h3 className="text-sm font-semibold uppercase tracking-wider text-fg-subtle">
             Connect
           </h3>
@@ -276,7 +269,11 @@ export default function BentoDashboard() {
         </BentoCard>
 
         {/* Quick facts */}
-        <BentoCard index={4 + projects.length} visible={visible}>
+        <BentoCard
+          index={5 + projects.length}
+          visible={visible}
+          className="lg:col-span-2"
+        >
           <h3 className="text-sm font-semibold uppercase tracking-wider text-fg-subtle">
             Quick Facts
           </h3>
