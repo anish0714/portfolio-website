@@ -104,38 +104,32 @@ export default function BentoDashboard() {
           </div>
         </BentoCard>
 
-        {/* Highlights */}
+        {/* Now building */}
         <BentoCard
           index={1}
           visible={visible}
           className="flex flex-col justify-center sm:col-span-2 lg:col-span-2 lg:row-span-2"
         >
-          <h3 className="mb-5 text-sm font-semibold uppercase tracking-wider text-fg-subtle">
-            Highlights
+          <p className="font-mono text-xs uppercase tracking-wider text-accent">
+            Now building
+          </p>
+          <h3 className="mt-3 text-2xl font-extrabold leading-tight text-fg sm:text-3xl">
+            LLM-powered legal-tech UI
           </h3>
-          <div className="flex flex-col gap-5">
-            {[
-              {
-                stat: "~30%",
-                label: "faster search, from optimized React rendering + API integration",
-              },
-              {
-                stat: "~25%",
-                label: "faster document delivery via an efficient Delivery API",
-              },
-              {
-                stat: "~20%",
-                label: "smaller bundles after Webpack optimization",
-              },
-            ].map((h) => (
-              <div key={h.stat} className="flex items-baseline gap-4">
-                <span className="w-20 shrink-0 font-mono text-2xl font-bold text-accent">
-                  {h.stat}
-                </span>
-                <span className="text-sm leading-snug text-fg-muted">
-                  {h.label}
-                </span>
-              </div>
+          <p className="mt-4 text-sm leading-relaxed text-fg-muted">
+            Integrating LLM-backed services into a legal-tech platform — from
+            playbook analysis with streaming AI results to a Compliance
+            Checker that flags nonconforming clauses automatically, cutting
+            manual review effort.
+          </p>
+          <div className="mt-5 flex flex-wrap gap-2">
+            {["Module Federation", "Streaming UI", "Claude"].map((tag) => (
+              <span
+                key={tag}
+                className="rounded-full border border-line bg-canvas px-3 py-1 font-mono text-xs text-fg-muted"
+              >
+                {tag}
+              </span>
             ))}
           </div>
         </BentoCard>
@@ -172,17 +166,31 @@ export default function BentoDashboard() {
           </div>
         </BentoCard>
 
-        {/* Project tiles */}
-        <div id="projects" className="contents">
+        {/* Projects */}
+        <div
+          id="projects"
+          style={{ transitionDelay: "210ms" }}
+          className={`col-span-1 mt-2 flex items-center gap-3 transition-opacity duration-700 ease-out sm:col-span-2 lg:col-span-4 ${
+            visible ? "opacity-100" : "opacity-0"
+          }`}
+        >
+          <h3 className="text-sm font-semibold uppercase tracking-wider text-fg-subtle">
+            Projects
+          </h3>
+          <div className="h-px flex-1 bg-line" />
+        </div>
+
+        <div className="contents">
           {projects.map((project, i) => {
-            const shownTech = project.tech.slice(0, 3);
+            const shownTech = project.tech.slice(0, 5);
             const hiddenCount = project.tech.length - shownTech.length;
             return (
               <BentoCard
                 key={project.slug}
-                index={3 + i}
+                index={4 + i}
                 visible={visible}
                 to={`/projects/${project.slug}`}
+                className="lg:col-span-2"
               >
                 <h3 className="text-base font-bold text-fg">
                   {project.name}
@@ -218,7 +226,11 @@ export default function BentoDashboard() {
         </div>
 
         {/* Connect */}
-        <BentoCard index={3 + projects.length} visible={visible}>
+        <BentoCard
+          index={4 + projects.length}
+          visible={visible}
+          className="lg:col-span-2"
+        >
           <h3 className="text-sm font-semibold uppercase tracking-wider text-fg-subtle">
             Connect
           </h3>
@@ -257,7 +269,11 @@ export default function BentoDashboard() {
         </BentoCard>
 
         {/* Quick facts */}
-        <BentoCard index={4 + projects.length} visible={visible}>
+        <BentoCard
+          index={5 + projects.length}
+          visible={visible}
+          className="lg:col-span-2"
+        >
           <h3 className="text-sm font-semibold uppercase tracking-wider text-fg-subtle">
             Quick Facts
           </h3>
