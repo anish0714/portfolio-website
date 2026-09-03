@@ -104,51 +104,21 @@ export default function BentoDashboard() {
           </div>
         </BentoCard>
 
-        {/* Now building */}
+        {/* Tech stack */}
         <BentoCard
           index={1}
           visible={visible}
-          className="flex flex-col justify-center sm:col-span-2 lg:col-span-2 lg:row-span-2"
-        >
-          <p className="font-mono text-xs uppercase tracking-wider text-accent">
-            Now building
-          </p>
-          <h3 className="mt-3 text-2xl font-extrabold leading-tight text-fg sm:text-3xl">
-            LLM-powered legal-tech UI
-          </h3>
-          <p className="mt-4 text-sm leading-relaxed text-fg-muted">
-            Integrating LLM-backed services into a legal-tech platform — from
-            playbook analysis with streaming AI results to a Compliance
-            Checker that flags nonconforming clauses automatically, cutting
-            manual review effort.
-          </p>
-          <div className="mt-5 flex flex-wrap gap-2">
-            {["Module Federation", "Streaming UI", "Claude"].map((tag) => (
-              <span
-                key={tag}
-                className="rounded-full border border-line bg-canvas px-3 py-1 font-mono text-xs text-fg-muted"
-              >
-                {tag}
-              </span>
-            ))}
-          </div>
-        </BentoCard>
-
-        {/* Tech stack */}
-        <BentoCard
-          index={2}
-          visible={visible}
           id="stack"
-          className="sm:col-span-2 lg:col-span-4"
+          className="flex flex-col justify-center sm:col-span-2 lg:col-span-2 lg:row-span-2"
         >
           <h3 className="mb-4 flex items-center gap-2 text-sm font-semibold uppercase tracking-wider text-fg-subtle">
             <Sparkles size={14} className="text-accent" />
             Tech Stack
           </h3>
-          <div className="grid grid-cols-1 gap-x-8 gap-y-3 sm:grid-cols-2">
+          <div className="flex flex-col gap-4">
             {techStack.map((group) => (
-              <div key={group.label} className="flex items-center gap-4">
-                <span className="w-28 shrink-0 font-mono text-xs text-fg-subtle">
+              <div key={group.label}>
+                <span className="mb-1.5 block font-mono text-xs text-fg-subtle">
                   {group.label}
                 </span>
                 <div className="flex flex-wrap gap-1.5">
@@ -169,7 +139,7 @@ export default function BentoDashboard() {
         {/* Projects */}
         <div
           id="projects"
-          style={{ transitionDelay: "210ms" }}
+          style={{ transitionDelay: "140ms" }}
           className={`col-span-1 mt-2 flex items-center gap-3 transition-opacity duration-700 ease-out sm:col-span-2 lg:col-span-4 ${
             visible ? "opacity-100" : "opacity-0"
           }`}
@@ -187,7 +157,7 @@ export default function BentoDashboard() {
             return (
               <BentoCard
                 key={project.slug}
-                index={4 + i}
+                index={2 + i}
                 visible={visible}
                 to={`/projects/${project.slug}`}
                 className="lg:col-span-2"
@@ -227,7 +197,7 @@ export default function BentoDashboard() {
 
         {/* Connect */}
         <BentoCard
-          index={4 + projects.length}
+          index={2 + projects.length}
           visible={visible}
           className="lg:col-span-2"
         >
@@ -270,7 +240,7 @@ export default function BentoDashboard() {
 
         {/* Quick facts */}
         <BentoCard
-          index={5 + projects.length}
+          index={3 + projects.length}
           visible={visible}
           className="lg:col-span-2"
         >
