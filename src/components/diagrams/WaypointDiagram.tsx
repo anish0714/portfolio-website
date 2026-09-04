@@ -185,7 +185,7 @@ export default function WaypointDiagram() {
           fontSize="10.5"
           fill="#8b949e"
         >
-          16 tables
+          17 tables
         </text>
         <text
           x="582"
