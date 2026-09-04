@@ -1,6 +1,11 @@
-import type { ComponentType } from "react";
-import WaypointDiagram from "../components/diagrams/WaypointDiagram";
-import DevPulseDiagram from "../components/diagrams/DevPulseDiagram";
+import waypointHome from "../assets/screenshots/waypoint-home.jpg";
+import waypointFlights from "../assets/screenshots/waypoint-flights.jpg";
+import waypointHotels from "../assets/screenshots/waypoint-hotels.jpg";
+import waypointHotelDetail from "../assets/screenshots/waypoint-hotel-detail.jpg";
+import devpulseShellIntro from "../assets/screenshots/devpulse-shell-intro.jpg";
+import devpulsePdfConversion from "../assets/screenshots/devpulse-pdf-conversion.jpg";
+import devpulsePdfManipulation from "../assets/screenshots/devpulse-pdf-manipulation.jpg";
+import type { CarouselImage } from "../components/Carousel";
 
 export interface Project {
   slug: string;
@@ -13,7 +18,7 @@ export interface Project {
   secondaryGithubUrl?: string;
   secondaryLabel?: string;
   liveUrl?: string;
-  Diagram: ComponentType;
+  screenshots: CarouselImage[];
 }
 
 export const projects: Project[] = [
@@ -37,7 +42,28 @@ export const projects: Project[] = [
       "GitHub Actions",
     ],
     githubUrl: "https://github.com/anish0714/travel-app",
-    Diagram: WaypointDiagram,
+    screenshots: [
+      {
+        src: waypointHome,
+        alt: "Waypoint home page with a flight/hotel search widget over a hero photo",
+        caption: "Home — real Canadian route search, popular-city hotel shortcuts",
+      },
+      {
+        src: waypointFlights,
+        alt: "Waypoint flight search results for Toronto to Vancouver with real fares",
+        caption: "Flight search — real airline fares, cabin classes, and seat availability",
+      },
+      {
+        src: waypointHotels,
+        alt: "Waypoint hotel search results grid for Toronto",
+        caption: "Hotel search — real hotels across rating tiers, filterable by city",
+      },
+      {
+        src: waypointHotelDetail,
+        alt: "Waypoint hotel detail page for the Fairmont Royal York with room rate plans",
+        caption: "Hotel detail — real room types with flexible and non-refundable rate plans",
+      },
+    ],
   },
   {
     slug: "devpulse-mfe",
@@ -59,6 +85,22 @@ export const projects: Project[] = [
     ],
     githubUrl: "https://github.com/anish0714/devpulse-mfe",
     liveUrl: "https://anish0714.github.io/devpulse-mfe/",
-    Diagram: DevPulseDiagram,
+    screenshots: [
+      {
+        src: devpulseShellIntro,
+        alt: "DevPulse shell landing page listing the available micro-frontend tools",
+        caption: "Shell — lists every independently deployed tool, loaded on demand",
+      },
+      {
+        src: devpulsePdfConversion,
+        alt: "DevPulse PDF Conversion Tool remote, loaded into the shell",
+        caption: "PDF Conversion Tool — a separately deployed remote, loaded at runtime",
+      },
+      {
+        src: devpulsePdfManipulation,
+        alt: "DevPulse PDF Manipulation Tool remote, loaded into the shell",
+        caption: "PDF Manipulation Tool — another remote, built and deployed on its own schedule",
+      },
+    ],
   },
 ];
