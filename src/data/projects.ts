@@ -20,10 +20,10 @@ export const projects: Project[] = [
   {
     slug: "waypoint",
     name: "Waypoint",
-    tagline: "Full-stack travel booking platform (flights + hotels)",
+    tagline: "Full-stack travel booking platform (flights, hotels, insurance, loyalty)",
     problem:
-      "Wanted a portfolio project that goes beyond CRUD: a real booking flow with actual inventory holds (not just a form that writes a row), seeded with real data rather than Lorem Ipsum placeholders - 15 real Canadian airports, 4 real airlines with a modeled 61-route domestic network, and 41 real hotels across 10 cities and 3 rating tiers, so search and booking behave like a real travel site.",
-    role: "Solo full-stack: designed the Prisma schema (16 tables), the Express API, the seat/room-inventory booking logic, JWT auth with guest checkout, and the Next.js frontend.",
+      "Wanted a portfolio project that goes beyond CRUD: a real booking flow with actual inventory holds (not just a form that writes a row), seeded with real data rather than Lorem Ipsum placeholders - 15 real Canadian airports, 4 real airlines with a modeled 61-route domestic network, 41 real hotels across 10 cities and 3 rating tiers, and 3 real insurance providers (TuGo, Manulife, Allianz), so search and booking behave like a real travel site. Layered on real business logic too: trip insurance priced against the booking's own subtotal, and a loyalty program that earns points per dollar spent and auto-upgrades tiers for real discounts on future bookings.",
+    role: "Solo full-stack: designed the Prisma schema (17 tables), the Express API, the seat/room-inventory booking logic, the insurance pricing and tiered loyalty program (discounts applied and recorded inside the booking transaction), JWT auth with guest checkout, the Next.js/TypeScript frontend, and the CI pipeline.",
     tech: [
       "Next.js",
       "React",
@@ -34,6 +34,7 @@ export const projects: Project[] = [
       "Prisma",
       "JWT",
       "Tailwind CSS",
+      "GitHub Actions",
     ],
     githubUrl: "https://github.com/anish0714/travel-app",
     Diagram: WaypointDiagram,
