@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { ExternalLink, ArrowLeft } from "lucide-react";
 import { projects } from "../data/projects";
 import { GitHubIcon } from "../components/icons";
+import Carousel from "../components/Carousel";
 
 export default function ProjectDetailPage() {
   const { slug } = useParams();
@@ -35,8 +36,6 @@ export default function ProjectDetailPage() {
     );
   }
 
-  const { Diagram } = project;
-
   return (
     <section className="mx-auto max-w-3xl px-6 py-16">
       <a
@@ -50,7 +49,32 @@ export default function ProjectDetailPage() {
       <h1 className="mt-6 text-3xl font-extrabold text-fg">{project.name}</h1>
       <p className="mt-2 font-mono text-sm text-accent">{project.tagline}</p>
 
-      <div className="mt-6 flex flex-wrap items-center gap-4">
+      <div className="mt-8">
+        <h2 className="text-sm font-semibold uppercase tracking-wider text-fg-subtle">
+          Tech
+        </h2>
+        <div className="mt-3 flex flex-wrap gap-2">
+          {project.tech.map((tech) => (
+            <span
+              key={tech}
+              className="rounded-full border border-line bg-canvas-subtle px-3 py-1 font-mono text-xs text-fg-muted"
+            >
+              {tech}
+            </span>
+          ))}
+        </div>
+      </div>
+
+      <div className="mt-8">
+        <h2 className="text-sm font-semibold uppercase tracking-wider text-fg-subtle">
+          My role
+        </h2>
+        <p className="mt-3 text-sm leading-relaxed text-fg-muted">
+          {project.role}
+        </p>
+      </div>
+
+      <div className="mt-8 flex flex-wrap items-center gap-4">
         <a
           href={project.githubUrl}
           target="_blank"
@@ -84,8 +108,8 @@ export default function ProjectDetailPage() {
         )}
       </div>
 
-      <div className="mt-10 overflow-hidden rounded-lg border border-[#30363d] bg-[#0d1117] p-4">
-        <Diagram />
+      <div className="mt-10">
+        <Carousel images={project.screenshots} />
       </div>
 
       <div className="mt-8">
@@ -95,31 +119,6 @@ export default function ProjectDetailPage() {
         <p className="mt-3 text-sm leading-relaxed text-fg-muted">
           {project.problem}
         </p>
-      </div>
-
-      <div className="mt-8">
-        <h2 className="text-sm font-semibold uppercase tracking-wider text-fg-subtle">
-          My role
-        </h2>
-        <p className="mt-3 text-sm leading-relaxed text-fg-muted">
-          {project.role}
-        </p>
-      </div>
-
-      <div className="mt-8">
-        <h2 className="text-sm font-semibold uppercase tracking-wider text-fg-subtle">
-          Tech
-        </h2>
-        <div className="mt-3 flex flex-wrap gap-2">
-          {project.tech.map((tech) => (
-            <span
-              key={tech}
-              className="rounded-full border border-line bg-canvas-subtle px-3 py-1 font-mono text-xs text-fg-muted"
-            >
-              {tech}
-            </span>
-          ))}
-        </div>
       </div>
     </section>
   );
