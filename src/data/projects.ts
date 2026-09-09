@@ -1,3 +1,7 @@
+import fitFuelOverview from "../assets/screenshots/fitfuel-overview.jpg";
+import fitFuelRecipes from "../assets/screenshots/fitfuel-recipes.jpg";
+import fitFuelMealPlan from "../assets/screenshots/fitfuel-mealplan.jpg";
+import fitFuelShopping from "../assets/screenshots/fitfuel-shopping.jpg";
 import waypointHome from "../assets/screenshots/waypoint-home.jpg";
 import waypointFlights from "../assets/screenshots/waypoint-flights.jpg";
 import waypointHotels from "../assets/screenshots/waypoint-hotels.jpg";
@@ -22,6 +26,47 @@ export interface Project {
 }
 
 export const projects: Project[] = [
+  {
+    slug: "fit-fuel",
+    name: "Fit Fuel",
+    tagline: "High-protein, lactose-free meal planner for a 12–8 fasting window",
+    problem:
+      "My own meal plan is real constraints, not a hypothetical: lactose intolerance, no beef or pork, a 12-8 intermittent fasting window, and a 4-7 PM gym block, with an air fryer as the main tool. Most meal-plan tools are either a static PDF or a full backend nobody needs for a personal routine - I wanted the middle ground: recipes I can actually filter and favorite, a week I can assign and see the real macro impact of, and a shopping list I check off on my phone at the store, with nothing to persist server-side because a single-user planner doesn't need one.",
+    role: "Solo: built the filterable recipe library, the weekly meal-plan calendar with live per-day protein/calorie totals, the checkable shopping list (grouped by category with real store notes), the macro calculator, and the localStorage-backed persistence hook every page builds on, plus the CI/CD pipeline.",
+    tech: [
+      "React",
+      "TypeScript",
+      "Vite",
+      "React Router",
+      "Tailwind CSS",
+      "Vitest",
+      "GitHub Actions",
+    ],
+    githubUrl: "https://github.com/anish0714/fit-fuel",
+    liveUrl: "https://anish0714.github.io/fit-fuel/",
+    screenshots: [
+      {
+        src: fitFuelOverview,
+        alt: "Fit Fuel overview page showing the daily rhythm timeline and current staples",
+        caption: "Overview — the daily rhythm from first meal to fasting window close",
+      },
+      {
+        src: fitFuelRecipes,
+        alt: "Fit Fuel recipes page with filterable tofu, fish, and chicken air-fryer recipes",
+        caption: "Recipes — filterable by protein type and tag, favoritable and persisted",
+      },
+      {
+        src: fitFuelMealPlan,
+        alt: "Fit Fuel weekly meal plan with a breakfast and dinner dropdown per day",
+        caption: "Meal plan — assign each day's meals and see live protein/calorie totals",
+      },
+      {
+        src: fitFuelShopping,
+        alt: "Fit Fuel shopping list grouped by category with real store notes",
+        caption: "Shopping list — checkable, grouped by category, with real store picks",
+      },
+    ],
+  },
   {
     slug: "waypoint",
     name: "Waypoint",
