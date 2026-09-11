@@ -57,33 +57,33 @@ export default function Header() {
           ))}
         </nav>
 
-        <div className="hidden items-center gap-4 md:flex">
+        <div className="hidden items-center gap-1 md:flex">
           <a
             href={gmailComposeUrl()}
             target="_blank"
             rel="noreferrer"
             aria-label="Email"
-            className="text-fg-muted transition-colors hover:text-fg"
+            className="rounded-md p-2 text-fg transition-colors hover:bg-canvas-subtle hover:text-accent"
           >
-            <Mail size={18} />
+            <Mail size={19} />
           </a>
           <a
             href={social.github}
             target="_blank"
             rel="noreferrer"
             aria-label="GitHub"
-            className="text-fg-muted transition-colors hover:text-fg"
+            className="rounded-md p-2 text-fg transition-colors hover:bg-canvas-subtle hover:text-accent"
           >
-            <GitHubIcon size={18} />
+            <GitHubIcon size={19} />
           </a>
           <a
             href={social.linkedin}
             target="_blank"
             rel="noreferrer"
             aria-label="LinkedIn"
-            className="text-fg-muted transition-colors hover:text-fg"
+            className="rounded-md p-2 text-fg transition-colors hover:bg-canvas-subtle hover:text-accent"
           >
-            <LinkedInIcon size={18} />
+            <LinkedInIcon size={19} />
           </a>
           <ThemeToggle />
         </div>
@@ -110,15 +110,15 @@ export default function Header() {
                 {link.label}
               </a>
             ))}
-            <div className="flex items-center gap-5 pt-2">
-              <a href={gmailComposeUrl()} target="_blank" rel="noreferrer" aria-label="Email" className="text-fg-muted hover:text-fg">
-                <Mail size={18} />
+            <div className="flex items-center gap-1 pt-2">
+              <a href={gmailComposeUrl()} target="_blank" rel="noreferrer" aria-label="Email" className="rounded-md p-2 text-fg hover:bg-canvas-subtle hover:text-accent">
+                <Mail size={19} />
               </a>
-              <a href={social.github} target="_blank" rel="noreferrer" aria-label="GitHub" className="text-fg-muted hover:text-fg">
-                <GitHubIcon size={18} />
+              <a href={social.github} target="_blank" rel="noreferrer" aria-label="GitHub" className="rounded-md p-2 text-fg hover:bg-canvas-subtle hover:text-accent">
+                <GitHubIcon size={19} />
               </a>
-              <a href={social.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn" className="text-fg-muted hover:text-fg">
-                <LinkedInIcon size={18} />
+              <a href={social.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn" className="rounded-md p-2 text-fg hover:bg-canvas-subtle hover:text-accent">
+                <LinkedInIcon size={19} />
               </a>
               <ThemeToggle />
             </div>

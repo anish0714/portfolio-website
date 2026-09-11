@@ -20,7 +20,7 @@ export default function ProjectDetailPage() {
 
   if (!project) {
     return (
-      <section className="mx-auto max-w-3xl px-6 py-24 text-center">
+      <section className="max-w-3xl px-6 py-24 text-center">
         <h1 className="text-2xl font-bold text-fg">Project not found</h1>
         <p className="mt-3 text-sm text-fg-muted">
           That project doesn't exist (or moved).
@@ -37,7 +37,7 @@ export default function ProjectDetailPage() {
   }
 
   return (
-    <section className="mx-auto max-w-3xl px-6 py-16">
+    <section className="max-w-3xl px-6 py-16">
       <a
         href={projectsHref}
         className="inline-flex items-center gap-2 text-sm font-semibold text-accent hover:text-fg"
