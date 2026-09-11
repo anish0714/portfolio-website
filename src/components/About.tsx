@@ -4,6 +4,7 @@ import { social } from "../data/social";
 import { GitHubIcon } from "./icons";
 import { useReveal } from "../hooks/useReveal";
 import SectionHeading from "./SectionHeading";
+import profile from "../assets/profile.jpg";
 
 export default function About() {
   const { ref, visible } = useReveal<HTMLElement>();
@@ -17,6 +18,21 @@ export default function About() {
       }`}
     >
       <div id="top" className="scroll-mt-24" />
+
+      <div className="mb-10 lg:hidden">
+        <img
+          src={profile}
+          alt="Anish Dandekar"
+          className="h-16 w-16 rounded-full border-2 border-accent object-cover"
+        />
+        <h1 className="mt-4 text-2xl font-extrabold tracking-tight text-fg">
+          Anish Dandekar
+        </h1>
+        <h2 className="mt-1 text-base font-semibold text-fg-muted">
+          Sr. Software Engineer
+        </h2>
+      </div>
+
       <SectionHeading number="01" title="About" />
 
       <div className="max-w-2xl space-y-4 text-[15px] leading-relaxed text-fg-muted">
