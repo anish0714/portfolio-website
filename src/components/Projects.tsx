@@ -44,10 +44,7 @@ export default function Projects() {
               </Link>
 
               <div className={`order-1 ${imageFirst ? "md:order-2" : "md:order-1"}`}>
-                <p className="font-mono text-xs uppercase tracking-wider text-accent">
-                  {project.tagline}
-                </p>
-                <h3 className="mt-2 text-xl font-bold text-fg">
+                <h3 className="text-xl font-bold text-fg">
                   <Link
                     to={`/projects/${project.slug}`}
                     className="transition-colors hover:text-accent"
@@ -55,6 +52,9 @@ export default function Projects() {
                     {project.name}
                   </Link>
                 </h3>
+                <p className="mt-1.5 font-mono text-xs uppercase tracking-wider text-accent">
+                  {project.tagline}
+                </p>
                 <p className="mt-3 text-sm leading-relaxed text-fg-muted">
                   {project.summary}
                 </p>
