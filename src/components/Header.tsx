@@ -6,10 +6,9 @@ import { GitHubIcon, LinkedInIcon } from "./icons";
 import ThemeToggle from "./ThemeToggle";
 
 const navLinks = [
-  { label: "About", href: `${import.meta.env.BASE_URL}#top` },
-  { label: "Stack", href: `${import.meta.env.BASE_URL}#stack` },
-  { label: "Projects", href: `${import.meta.env.BASE_URL}#projects` },
+  { label: "About", href: `${import.meta.env.BASE_URL}#about` },
   { label: "Experience", href: `${import.meta.env.BASE_URL}#experience` },
+  { label: "Projects", href: `${import.meta.env.BASE_URL}#projects` },
   { label: "Contact", href: `${import.meta.env.BASE_URL}#contact` },
 ];
 
@@ -26,7 +25,7 @@ export default function Header() {
 
   return (
     <header
-      className={`sticky top-0 z-50 border-b transition-colors ${
+      className={`sticky top-0 z-50 border-b transition-colors lg:hidden ${
         scrolled
           ? "border-line bg-canvas/85 backdrop-blur-md"
           : "border-transparent bg-canvas/0"
