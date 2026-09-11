@@ -15,6 +15,7 @@ export interface Project {
   slug: string;
   name: string;
   tagline: string;
+  summary: string;
   problem: string;
   role: string;
   tech: string[];
@@ -30,6 +31,8 @@ export const projects: Project[] = [
     slug: "fit-fuel",
     name: "Fit Fuel",
     tagline: "High-protein, lactose-free meal planner for a 12–8 fasting window",
+    summary:
+      "A filterable recipe library, a weekly meal-plan calendar with live macro totals, a checkable shopping list, and a macro calculator — all persisted client-side, with nothing to run server-side.",
     problem:
       "My own meal plan is real constraints, not a hypothetical: lactose intolerance, no beef or pork, a 12-8 intermittent fasting window, and a 4-7 PM gym block, with an air fryer as the main tool. Most meal-plan tools are either a static PDF or a full backend nobody needs for a personal routine - I wanted the middle ground: recipes I can actually filter and favorite, a week I can assign and see the real macro impact of, and a shopping list I check off on my phone at the store, with nothing to persist server-side because a single-user planner doesn't need one.",
     role: "Solo: built the filterable recipe library, the weekly meal-plan calendar with live per-day protein/calorie totals, the checkable shopping list (grouped by category with real store notes), the macro calculator, and the localStorage-backed persistence hook every page builds on, plus the CI/CD pipeline.",
@@ -71,6 +74,8 @@ export const projects: Project[] = [
     slug: "waypoint",
     name: "Waypoint",
     tagline: "Full-stack travel booking platform (flights, hotels, insurance, loyalty)",
+    summary:
+      "A real booking flow with actual seat/room inventory holds, seeded with real Canadian airports, airlines, and hotels — plus insurance pricing and a tiered loyalty program layered on top.",
     problem:
       "Wanted a portfolio project that goes beyond CRUD: a real booking flow with actual inventory holds (not just a form that writes a row), seeded with real data rather than Lorem Ipsum placeholders - 15 real Canadian airports, 4 real airlines with a modeled 61-route domestic network, 41 real hotels across 10 cities and 3 rating tiers, and 3 real insurance providers (TuGo, Manulife, Allianz), so search and booking behave like a real travel site. Layered on real business logic too: trip insurance priced against the booking's own subtotal, and a loyalty program that earns points per dollar spent and auto-upgrades tiers for real discounts on future bookings.",
     role: "Solo full-stack: designed the Prisma schema (17 tables), the Express API, the seat/room-inventory booking logic, the insurance pricing and tiered loyalty program (discounts applied and recorded inside the booking transaction), JWT auth with guest checkout, the Next.js/TypeScript frontend, and the CI pipeline.",
@@ -114,6 +119,8 @@ export const projects: Project[] = [
     slug: "devpulse-mfe",
     name: "DevPulse",
     tagline: "Micro-frontend toolbox: 5 real client-side tools, independently deployed",
+    summary:
+      "A public, working example of the micro-frontend pattern from my day job: 5 independently useful, 100%-client-side tools — PDF conversion, PDF editing, dev utilities, a PDF form filler, and OCR — each built, tested, and deployed on its own schedule via real Webpack Module Federation.",
     problem:
       "My resume lists architecting a micro frontend system at work, but that code is proprietary and unshowable. DevPulse is a public, working example of the same pattern - but rather than a toy demo, each micro-frontend is a genuinely useful, 100%-client-side tool: converting images/Word docs to PDF and merging PDFs, editing PDFs (text, highlight, redact, delete pages), everyday dev utilities (JSON formatting, Base64/URL encoding, UUID/hash generation, a regex tester), filling real interactive PDF form fields, and OCR text extraction from images or scanned PDFs. The shell has zero compile-time dependency on any tool; it only knows a URL and an exposed module name, so each one builds, tests, and deploys on its own schedule.",
     role: "Solo: designed the shell + 5 tool remotes (PDF conversion, PDF manipulation, dev utils, PDF form filler, OCR), wired per-package CI (each lints/builds as its own GitHub Actions check) and the combined GitHub Pages deployment.",

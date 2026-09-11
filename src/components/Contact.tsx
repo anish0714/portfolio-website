@@ -2,6 +2,7 @@ import { useState, type FormEvent } from "react";
 import { Send } from "lucide-react";
 import { gmailComposeUrl } from "../data/social";
 import { useReveal } from "../hooks/useReveal";
+import SectionHeading from "./SectionHeading";
 
 export default function Contact() {
   const [name, setName] = useState("");
@@ -20,16 +21,11 @@ export default function Contact() {
     <section
       ref={ref}
       id="contact"
-      className={`mx-auto max-w-5xl px-6 py-14 transition-all duration-700 ease-out ${
+      className={`scroll-mt-24 px-6 py-16 pb-24 transition-all duration-700 ease-out lg:py-24 ${
         visible ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"
       }`}
     >
-      <div className="mb-8 flex items-center gap-3">
-        <h2 className="text-sm font-semibold uppercase tracking-wider text-fg-subtle">
-          Contact
-        </h2>
-        <div className="h-px flex-1 bg-line" />
-      </div>
+      <SectionHeading number="04" title="Contact" />
 
       <div className="grid gap-10 md:grid-cols-[0.9fr_1.1fr]">
         <div>
