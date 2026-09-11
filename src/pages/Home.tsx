@@ -1,6 +1,7 @@
 import { useEffect } from "react";
-import BentoDashboard from "../components/BentoDashboard";
+import About from "../components/About";
 import Experience from "../components/Experience";
+import Projects from "../components/Projects";
 import Contact from "../components/Contact";
 
 export default function Home() {
@@ -28,10 +29,11 @@ export default function Home() {
   }, []);
 
   return (
-    <>
-      <BentoDashboard />
+    <div className="mx-auto max-w-3xl">
+      <About />
       <Experience />
+      <Projects />
       <Contact />
-    </>
+    </div>
   );
 }

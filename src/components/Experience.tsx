@@ -2,6 +2,7 @@ import { Building2 } from "lucide-react";
 import { experience } from "../data/experience";
 import ExperienceCard from "./ExperienceCard";
 import { useReveal } from "../hooks/useReveal";
+import SectionHeading from "./SectionHeading";
 
 export default function Experience() {
   const { ref, visible } = useReveal<HTMLElement>();
@@ -10,16 +11,11 @@ export default function Experience() {
     <section
       ref={ref}
       id="experience"
-      className={`mx-auto max-w-5xl px-6 py-14 transition-all duration-700 ease-out ${
+      className={`scroll-mt-24 px-6 py-16 transition-all duration-700 ease-out lg:py-24 ${
         visible ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"
       }`}
     >
-      <div className="mb-8 flex items-center gap-3">
-        <h2 className="text-sm font-semibold uppercase tracking-wider text-fg-subtle">
-          Experience
-        </h2>
-        <div className="h-px flex-1 bg-line" />
-      </div>
+      <SectionHeading number="02" title="Experience" />
 
       <div className="flex flex-col gap-12">
         {experience.map((company) => (
