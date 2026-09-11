@@ -30,7 +30,7 @@ export default function Projects() {
             >
               <Link
                 to={`/projects/${project.slug}`}
-                className={`group block overflow-hidden rounded-lg border border-line ${
+                className={`group order-2 block overflow-hidden rounded-lg border border-line ${
                   imageFirst ? "md:order-1" : "md:order-2"
                 }`}
               >
@@ -43,7 +43,7 @@ export default function Projects() {
                 )}
               </Link>
 
-              <div className={imageFirst ? "md:order-2" : "md:order-1"}>
+              <div className={`order-1 ${imageFirst ? "md:order-2" : "md:order-1"}`}>
                 <p className="font-mono text-xs uppercase tracking-wider text-accent">
                   {project.tagline}
                 </p>
