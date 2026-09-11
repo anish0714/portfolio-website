@@ -12,8 +12,10 @@ const navItems = [
   { id: "contact", number: "04", label: "Contact" },
 ];
 
+const navIds = navItems.map((item) => item.id);
+
 export default function Sidebar() {
-  const active = useActiveSection(navItems.map((item) => item.id));
+  const active = useActiveSection(navIds);
 
   return (
     <aside className="hidden lg:fixed lg:inset-y-0 lg:left-0 lg:flex lg:w-[26rem] lg:flex-col lg:justify-between lg:px-12 lg:py-16 xl:w-[30rem] xl:px-20">

@@ -10,20 +10,42 @@ export function useActiveSection(ids: string[]) {
 
     if (elements.length === 0) return;
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visible = entries.filter((entry) => entry.isIntersecting);
-        if (visible.length === 0) return;
-        const topMost = visible.reduce((a, b) =>
-          a.boundingClientRect.top <= b.boundingClientRect.top ? a : b,
-        );
-        setActive(topMost.target.id);
-      },
-      { rootMargin: "-15% 0px -70% 0px", threshold: 0 },
-    );
+    let ticking = false;
 
-    elements.forEach((el) => observer.observe(el));
-    return () => observer.disconnect();
+    const update = () => {
+      ticking = false;
+
+      const scrolledToBottom =
+        window.innerHeight + window.scrollY >=
+        document.documentElement.scrollHeight - 2;
+      if (scrolledToBottom) {
+        setActive(elements[elements.length - 1].id);
+        return;
+      }
+
+      const offset = window.innerHeight * 0.3;
+      let current = elements[0].id;
+      for (const el of elements) {
+        if (el.getBoundingClientRect().top <= offset) {
+          current = el.id;
+        }
+      }
+      setActive(current);
+    };
+
+    const onScroll = () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(update);
+    };
+
+    update();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+    };
   }, [ids]);
 
   return active;
