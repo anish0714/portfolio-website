@@ -4,6 +4,7 @@ import { Mail, Menu, X } from "lucide-react";
 import { social, gmailComposeUrl } from "../data/social";
 import { GitHubIcon, LinkedInIcon } from "./icons";
 import ThemeToggle from "./ThemeToggle";
+import profile from "../assets/profile.jpg";
 
 const navLinks = [
   { label: "About", href: `${import.meta.env.BASE_URL}#about` },
@@ -34,9 +35,14 @@ export default function Header() {
       <div className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
         <Link
           to="/"
-          className="font-mono text-sm font-semibold text-fg transition-colors hover:text-accent"
+          className="flex items-center gap-2.5 text-sm font-semibold text-fg transition-colors hover:text-accent"
         >
-          <span className="text-accent">~/</span>anish-dandekar
+          <img
+            src={profile}
+            alt=""
+            className="h-7 w-7 rounded-full border border-accent object-cover"
+          />
+          Anish Dandekar
         </Link>
 
         <nav className="hidden items-center gap-8 md:flex">
