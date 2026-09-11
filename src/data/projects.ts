@@ -118,12 +118,12 @@ export const projects: Project[] = [
   {
     slug: "devpulse-mfe",
     name: "DevPulse",
-    tagline: "Micro-frontend toolbox: real PDF tools, independently deployed",
+    tagline: "Micro-frontend toolbox: 5 real client-side tools, independently deployed",
     summary:
-      "A public, working example of the micro-frontend pattern from my day job: independently useful, 100%-client-side tools, each built, tested, and deployed on its own schedule via real Webpack Module Federation.",
+      "A public, working example of the micro-frontend pattern from my day job: 5 independently useful, 100%-client-side tools — PDF conversion, PDF editing, dev utilities, a PDF form filler, and OCR — each built, tested, and deployed on its own schedule via real Webpack Module Federation.",
     problem:
-      "My resume lists architecting a micro frontend system at work, but that code is proprietary and unshowable. DevPulse is a public, working example of the same pattern - but rather than a toy demo, each micro-frontend is a genuinely useful, 100%-client-side tool: converting images/Word docs to PDF, merging PDFs, and editing PDFs (text, highlight, redact, delete pages). The shell has zero compile-time dependency on either tool; it only knows a URL and an exposed module name, so each one builds, tests, and deploys on its own schedule.",
-    role: "Solo: designed the shell + 2 tool remotes (PDF conversion, PDF manipulation), wired per-package CI (each lints/builds as its own GitHub Actions check) and the combined GitHub Pages deployment.",
+      "My resume lists architecting a micro frontend system at work, but that code is proprietary and unshowable. DevPulse is a public, working example of the same pattern - but rather than a toy demo, each micro-frontend is a genuinely useful, 100%-client-side tool: converting images/Word docs to PDF and merging PDFs, editing PDFs (text, highlight, redact, delete pages), everyday dev utilities (JSON formatting, Base64/URL encoding, UUID/hash generation, a regex tester), filling real interactive PDF form fields, and OCR text extraction from images or scanned PDFs. The shell has zero compile-time dependency on any tool; it only knows a URL and an exposed module name, so each one builds, tests, and deploys on its own schedule.",
+    role: "Solo: designed the shell + 5 tool remotes (PDF conversion, PDF manipulation, dev utils, PDF form filler, OCR), wired per-package CI (each lints/builds as its own GitHub Actions check) and the combined GitHub Pages deployment.",
     tech: [
       "React",
       "TypeScript",
@@ -132,6 +132,7 @@ export const projects: Project[] = [
       "pdf-lib",
       "pdfjs-dist",
       "mammoth",
+      "Tesseract.js",
       "npm workspaces",
       "GitHub Actions",
     ],
