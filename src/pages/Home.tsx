@@ -29,7 +29,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="mx-auto max-w-3xl">
+    <div className="max-w-3xl">
       <About />
       <Experience />
       <Projects />
